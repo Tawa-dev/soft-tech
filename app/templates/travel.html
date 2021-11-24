@@ -1,0 +1,82 @@
+{% extends 'layout.html' %} {% block title %}Travel Allowance{% endblock %} {%
+block content %}
+
+<h2>Travel Allowance</h2>
+
+<form action="{{ url_for('travel') }}" method="post" class="mx-3 mt-3">
+  <div class="form-group">
+    <label for="dept">Department</label>
+    <select
+      class="form-control"
+      name="dept"
+      id="dept"
+      class="dept_option"
+      required
+    >
+      <option value="">--Select Department--</option>
+      <option name="dept" value="Accounts">Accounts</option>
+      <option value="Marketing">Marketing</option>
+      <option value="Technical">Technical</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label for="position">Position</label>
+    <select
+      class="form-control"
+      name="position"
+      id="position"
+      class="position_option"
+      required
+    >
+      <option value="">--Select Position--</option>
+      <option value="Adminstrator">Adminstrator</option>
+      <option value="Accounting Manager">Accounting Manager</option>
+      <option value="Accounting Assistant">Accounting Assistant</option>
+      <option value="ICT Director">ICT Director</option>
+      <option value="ICT Assistant Officer">ICT Assistant Officer</option>
+      <option value="Programmer">Programmer</option>
+      <option value="Graphic Designer">Graphic Designer</option>
+      <option value="Receptionist">Receptionist</option>
+      <option value="Marketer">Marketer</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label for="destination">Destination</label>
+    <input
+      class="form-control"
+      type="text"
+      name="destination"
+      id="destination"
+      class="destination"
+      required
+    />
+  </div>
+  <div class="form-group">
+    <label for="description">Description</label>
+    <textarea
+      class="form-control"
+      name="description"
+      id="description"
+      cols="30"
+      rows="10"
+      placeholder="Reason/s for going"
+      required
+    ></textarea>
+  </div>
+  <div class="form-group">
+    <label for="budget">Budget (USD)</label>
+    <input
+      class="form-control"
+      type="number"
+      name="budget"
+      id="budget"
+      class="budget"
+      placeholder="1000"
+      required
+    />
+  </div>
+  <input class="form-submit dash-btn" type="submit" value="Apply" />
+  <p class="msg done">{{ msg }}</p>
+</form>
+
+{% endblock %}

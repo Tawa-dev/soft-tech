@@ -1,0 +1,65 @@
+{% extends 'layout.html' %} {% block title %}Dashboard{% endblock %} {% block
+content %}
+<div class="h-container">
+  <h2>Leave Days</h2>
+  <p class="leave-title">
+    Available Leave Days: <span class="leave-num">{{available_days}}</span>
+  </p>
+</div>
+<div class="outer-container">
+  <h5>Apply For Leave</h5>
+  <form action="{{ url_for('leave_days') }}" method="post" class="mx-3">
+    <div class="inner-container">
+      <div class="form-group">
+        <label for="dept">Department</label>
+        <select
+          class="form-control"
+          name="dept"
+          id="dept"
+          class="dept_option"
+          required
+        >
+          <option value="">--Select Department--</option>
+          <option name="dept" value="Accounts">Accounts</option>
+          <option value="Marketing">Marketing</option>
+          <option value="Technical">Technical</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="position">Position</label>
+        <select
+          class="form-control"
+          name="position"
+          id="position"
+          class="position_option"
+          required
+        >
+          <option value="">--Select Position--</option>
+          <option value="Adminstrator">Adminstrator</option>
+          <option value="Accounting Manager">Accounting Manager</option>
+          <option value="Accounting Assistant">Accounting Assistant</option>
+          <option value="ICT Director">ICT Director</option>
+          <option value="ICT Assistant Officer">ICT Assistant Officer</option>
+          <option value="Programmer">Programmer</option>
+          <option value="Graphic Designer">Graphic Designer</option>
+          <option value="Receptionist">Receptionist</option>
+          <option value="Marketer">Marketer</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="days">Days</label>
+        <input
+          class="form-control"
+          type="number"
+          name="days"
+          id="days"
+          class="days"
+          required
+        />
+      </div>
+      <input class="form-submit dash-btn" type="submit" value="Apply" />
+      <p class="msg done">{{ msg }}</p>
+    </div>
+  </form>
+</div>
+{% endblock %}
