@@ -8,7 +8,7 @@ from flask import render_template, request, url_for, redirect, session
 def travel():
     msg = ''
     if request.method == 'POST':
-        ec_number = session['ec_number']
+        id_number = session['id_number']
         Useremail = session['Useremail']
         # Get form data
         dept = request.form['dept']
@@ -18,7 +18,7 @@ def travel():
         budget = request.form['budget']
         
         # Insert travel allowance in travel collection
-        travel = {"ec_number": ec_number,"dept":dept,"position": position,"destination":destination,"description":description,"budget":budget}
+        travel = {"id_number": id_number,"dept":dept,"position": position,"destination":destination,"description":description,"budget":budget}
         Database.insert("travel",travel)
         msg = 'Successfully Applied For Travel Allowance. We Will Give You Feedback Soon!'
 
