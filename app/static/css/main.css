@@ -234,8 +234,31 @@ body.loggedin {
   font-size: 1.9rem;
 }
 /* Corporate */
+.container-corporate-outer {
+  min-height: 126vh;
+  background: url("../assets/g2.jpg");
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  padding-top: 6rem;
+  background-color: #fff;
+}
+p {
+  background-color: rgba(95, 36, 36, 0.05);
+}
+.container-h h1,
+.section h1 {
+  font-size: 3rem;
+  text-transform: uppercase;
+  font-weight: 300;
+}
+.section h3 {
+  font-size: 2rem;
+  text-transform: uppercase;
+  font-weight: 300;
+}
 .container-corporate {
-  margin-top: 6rem;
   color: #fff;
   padding: 0 5rem;
 }
@@ -243,30 +266,127 @@ body.loggedin {
   margin: 4rem auto !important;
   text-align: center;
 }
+.section:last-child {
+  margin-bottom: 0 !important;
+}
+.lc {
+  padding-bottom: 16px;
+  margin-bottom: 0 !important;
+}
 .container-h {
   text-align: center;
 }
 
-/* Uniform */
-.container-uniform {
+/* Services */
+section {
+  padding: 6rem 0;
+}
+
+.container-services {
+  width: 90%;
+  max-width: 120rem;
+  height: 100%;
+  margin: 0 auto;
+  position: relative;
+}
+.section-heading {
+  text-align: center;
+  margin-bottom: 10rem;
+}
+.section-heading h1 {
+  font-size: 3.5rem;
   color: #fff;
-  margin-top: 6rem;
-  padding-left: 2.5rem;
-  padding-right: 2.5rem;
+  text-transform: uppercase;
+  font-weight: 300;
+  position: relative;
+  margin-bottom: 1rem;
 }
-.container-uniform h1 {
-  font-size: 2rem;
-  margin-bottom: 1.5rem;
+.section-heading h1::before,
+.section-heading h1::after {
+  content: "";
+  position: absolute;
+  bottom: -0.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(255, 255, 255, 0.75);
 }
-.uniform-section {
-  margin-top: 2rem;
+.section-heading h1::before {
+  width: 10rem;
+  height: 3px;
+  border-radius: 0.8rem;
 }
-.uniform-section h3 {
-  margin-bottom: 1.5rem;
+.section-heading h1::after {
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 100%;
+  bottom: -1rem;
 }
-.uniform-section li {
-  line-height: 2;
+.section-heading h6 {
+  font-size: 1.6rem;
+  font-weight: 300;
+  color: #aaa;
 }
+.service-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 5rem;
+}
+.service-item:last-child {
+  margin-bottom: 0;
+}
+img {
+  width: 100%;
+  height: 100%;
+}
+.service-img {
+  flex: 1;
+  margin-right: 5rem;
+  width: 50rem;
+  height: 22rem;
+}
+.service-img2 {
+  flex: 1;
+  margin-left: 5rem;
+  width: 50rem;
+  height: 22rem;
+}
+.service-description {
+  flex: 1;
+  color: #fff;
+}
+.section-heading h1 {
+  font-size: 3rem;
+  text-transform: uppercase;
+  font-weight: 300;
+  margin: 1rem 0;
+}
+.service-description h6 {
+  text-transform: uppercase;
+  font-size: 1.5rem;
+  font-weight: 300;
+  opacity: 0.3;
+  color: #fff !important;
+}
+/* Contact */
+.form-contact label {
+  font-size: 1.5rem;
+  color: #fff;
+}
+.contact-btn {
+  display: block;
+  margin-left: auto;
+  background-color: #fff;
+  border: none;
+  color: blue;
+  border-radius: 0.8rem;
+  padding: 0.5rem 1rem;
+}
+.contact-btn:hover {
+  background-color: #aaa;
+  color: #fff;
+}
+
 /* leave dashboard */
 .l-out a {
   padding-left: 0;
