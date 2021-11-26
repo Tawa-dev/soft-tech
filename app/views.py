@@ -1,11 +1,12 @@
 from app import app          
 from app.database import Database      
 
+
 from flask import render_template, request, url_for, redirect, session
 import re
 from werkzeug.security import generate_password_hash, check_password_hash
 from datetime import datetime
-
+from app import email
 
 app.secret_key = "testing"
 
@@ -130,4 +131,23 @@ def dashboard():
     return redirect(url_for('login'))
     
 
-   
+@app.route('/uniform', methods=['GET', 'POST'])
+def contact():
+    if request.method == 'POST':
+        name = request.form['name']
+        emailC = request.form['emailC']
+        services = request.form['services']
+        subject = request.form['subject']
+        # Send email with provided details
+        content = f"""
+          Hello \n
+
+          I need a Service with the following details attached below \n
+          Name: {name}
+          Email: { emailC}
+          Services: {services} \n
+          Subject: {subject} \n
+         """
+        email.sendEmail('Service Application',content)
+
+    return render_template('uniform.html')
